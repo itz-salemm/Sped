@@ -1,0 +1,1 @@
+web: gunicorn sped.wsgi --log-file -

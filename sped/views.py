@@ -30,9 +30,10 @@ def upload_file(request):
 		form = UploadFileForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
+			file = request.POST.get('file')
 
 			#read the file 
-			with smart_open('s3://sped-1250/SPED.txt', 'rb') as s3_source:
+			with smart_open(f's3://sped-1250/{file}', 'rb') as s3_source:
 				for line in s3_source:
 					line = line.decode('cp1250')
 
