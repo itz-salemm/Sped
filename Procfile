@@ -1,1 +1,1 @@
-web: gunicorn sped.wsgi --log-file -
+web: gunicorn Text2.wsgi --log-file -
